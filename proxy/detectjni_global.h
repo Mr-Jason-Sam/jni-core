@@ -1,0 +1,12 @@
+#ifndef DETECTJNI_GLOBAL_H
+#define DETECTJNI_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(DETECTJNI_LIBRARY)
+#  define DETECTJNISHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define DETECTJNISHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // DETECTJNI_GLOBAL_H
