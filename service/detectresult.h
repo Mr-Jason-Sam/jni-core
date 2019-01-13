@@ -1,7 +1,7 @@
 #ifndef DETECTRESULT_H
 #define DETECTRESULT_H
 
-#include "subject.h"
+#include "entity/subject.h"
 
 #include <iostream>
 #include <list>
@@ -11,6 +11,7 @@ class DetectResult
 {
 public:
     DetectResult();
+    DetectResult(string imgUrl):imageUrl(imgUrl){}
     string getImageUrl() {return imageUrl;}
     list<Subject> getSubjects() {return subjects;}
     int getTimeUsed() {return timeUsed;}

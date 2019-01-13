@@ -1,10 +1,10 @@
 #ifndef DETECTJNI_H
 #define DETECTJNI_H
 
-#include "detectjni_global.h"
-#include "detectconfig.h"
+#include "proxy/detectjni_global.h"
+#include "entity/detectconfig.h"
+#include "utils/qhelper.h"
 #include "detectresult.h"
-#include "helper.h"
 
 #include <iostream>
 
@@ -26,9 +26,10 @@ public:
     string start(string);
 
 protected:
-    QString getDetectResultJson(DetectResult);
-    QString getDetectConfigJson(DetectConfig);
-
+    QString      getDetectResultJson(DetectResult);
+    QString      getDetectConfigJson(DetectConfig);
+    QJsonObject  getJsonObjectFromSubject(Subject);
+    QJsonValue   assembleQJsonValueFromSubjects(list<Subject>);
     bool release();
 };
 

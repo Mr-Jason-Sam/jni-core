@@ -22,43 +22,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += \
-        detectjni.cpp \
-    detectproxy.cpp \
-    detectconfig.cpp \
-    detectresult.cpp \
-    helper.cpp \
-    subject.cpp \
-    subjectbox.cpp \
-    service/detectjni.cpp \
-    service/detectproxy.cpp \
-    service/detectresult.cpp \
-    utils/qhelper.cpp \
-    proxy/detectproxy.cpp
-
-HEADERS += \
-        detectjni.h \
-        detectjni_global.h \ 
-    detectproxy.h \
-    detectconfig.h \
-    detectresult.h \
-    helper.h \
-    subject.h \
-    subjectbox.h \
-    entity/detectconfig.h \
-    entity/subject.h \
-    entity/subjectbox.h \
-    service/detectjni.h \
-    service/detectproxy.h \
-    service/detectresult.h \
-    utils/qhelper.h \
-    proxy/detectjni_global.h \
-    proxy/detectproxy.h
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
 
+#import jni
 INCLUDEPATH += /usr/local/jdk1.8.0_191/include
 INCLUDEPATH += /usr/local/jdk1.8.0_191/include/linux
+
+DISTFILES += \
+    TestData
+
+HEADERS += \
+    entity/detectconfig.h \
+    entity/subject.h \
+    entity/subjectbox.h \
+    proxy/detectjni_global.h \
+    proxy/detectproxy.h \
+    service/detectjni.h \
+    service/detectresult.h \
+    utils/qhelper.h
+
+SOURCES += \
+    entity/detectconfig.cpp \
+    entity/subject.cpp \
+    entity/subjectbox.cpp \
+    proxy/detectproxy.cpp \
+    service/detectjni.cpp \
+    service/detectresult.cpp \
+    utils/qhelper.cpp

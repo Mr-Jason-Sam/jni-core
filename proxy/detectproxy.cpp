@@ -1,5 +1,5 @@
 #include "detectproxy.h"
-#include "detectjni.h"
+#include "service/detectjni.h"
 
 DetectJNI* service = new DetectJNI();
 

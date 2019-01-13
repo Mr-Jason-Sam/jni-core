@@ -17,11 +17,12 @@ class QHelper
 {
 public:
     QHelper();
-    static QJsonObject    getQJsonObjectFromQString(const QString);
-    static QString        getQStringFromQJsonObject(const QJsonObject&);
-    static QJsonObject    getQJsonObjectFromString(const string);
-    static string         getStringFromJsonObjectAndValue(const QJsonObject&, const string);
-    static int            getIntegerFromJsonObjectAndValue(const QJsonObject&, const string);
+    static QJsonObject        getQJsonObjectFromQString(const QString);
+    static QString            getQStringFromQJsonObject(const QJsonObject&);
+    static QJsonObject        getQJsonObjectFromString(const string);
+    static string             getStringFromJsonObjectAndValue(const QJsonObject&, const string);
+    static int                getIntegerFromJsonObjectAndValue(const QJsonObject&, const string);
+//    template<typename  T>     static QJsonValue getQJsonValueFromList(const list<T> list);
 };
 
 #endif // QHELPER_H
