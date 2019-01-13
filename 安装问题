@@ -1,0 +1,29 @@
+/usr/bin/ld: /usr/local/lib/libavformat.a(allformats.o): relocation R_X86_64_32 against `.bss' can not be used when making a shared object; recompile with -fPIC
+/usr/local/lib/libavformat.a: error adding symbols: Bad value
+collect2: error: ld returned 1 exit status
+modules/videoio/CMakeFiles/opencv_videoio.dir/build.make:253: recipe for target 'lib/libopencv_videoio.so.3.4.0' failed
+make[2]: *** [lib/libopencv_videoio.so.3.4.0] Error 1
+CMakeFiles/Makefile2:4880: recipe for target 'modules/videoio/CMakeFiles/opencv_videoio.dir/all' failed
+make[1]: *** [modules/videoio/CMakeFiles/opencv_videoio.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+
+
+ffmpeg
+make clean
+./configure \
+  --enable-shared \
+  --enable-gpl \
+  --enable-libass \
+  --enable-libfdk-aac \
+  --enable-libfreetype \
+  --enable-libmp3lame \
+  --enable-libopus \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-libx265 \
+  --enable-nonfree \
+  --extra-cflags="-fPIC"
+make -j8
+sudo make install
+
