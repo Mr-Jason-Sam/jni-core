@@ -8,6 +8,9 @@ QT       -= gui
 
 TARGET = DetectJNI
 TEMPLATE = lib
+CONFIG += console c++11
+CONFIG -= app_bundle
+CONFIG -= qt
 
 DEFINES += DETECTJNI_LIBRARY
 
@@ -23,27 +26,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
+
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
 
 #import jni
-INCLUDEPATH += /usr/local/jdk1.8.0_191/include
-INCLUDEPATH += /usr/local/jdk1.8.0_191/include/linux
+INCLUDEPATH += /usr/local/jdk1.8.0_201/include
+INCLUDEPATH += /usr/local/jdk1.8.0_201/include/linux
 
-DISTFILES += \
-    TestData
+#import pthread
+LIBS += -lpthread
 
 HEADERS += \
     entity/detectconfig.h \
+    entity/detectresult.h \
     entity/subject.h \
     entity/subjectbox.h \
     proxy/detectjni_global.h \
     proxy/detectproxy.h \
     service/detectjni.h \
     utils/qhelper.h \
-    entity/detectresult.h \
     entity/detectconfig.h \
     entity/detectresult.h \
     entity/subject.h \
@@ -51,42 +55,39 @@ HEADERS += \
     proxy/detectjni_global.h \
     proxy/detectproxy.h \
     service/detectjni.h \
-    service/detectresult.h \
     utils/qhelper.h \
-    thread.h \
-    msgqueue.h \
-    core/thread/thread.h \
-    core/msgqueue.h \
-    core/thread/mutex.h \
-    core/thread/threadfactory.h \
-    core/msgqueuefactory.h \
-    core/thread/senderthread.h \
-    core/thread/receiverthread.h \
-    core/thread/sem.h
+    core/basethread.h \
+    core/smartmutex.h \
+    core/smartcountingsem.h \
+    core/mqthread.h \
+    core/senderthread.h \
+    core/receiverthread.h \
+    core/mqsubjectdetect.h \
+    core/baseos.h \
+    core/mqos.h
 
 SOURCES += \
     entity/detectconfig.cpp \
+    entity/detectresult.cpp \
     entity/subject.cpp \
     entity/subjectbox.cpp \
     proxy/detectproxy.cpp \
     service/detectjni.cpp \
     utils/qhelper.cpp \
-    entity/detectresult.cpp \
     entity/detectconfig.cpp \
     entity/detectresult.cpp \
     entity/subject.cpp \
     entity/subjectbox.cpp \
     proxy/detectproxy.cpp \
     service/detectjni.cpp \
-    service/detectresult.cpp \
     utils/qhelper.cpp \
-    thread.cpp \
-    msgqueue.cpp \
-    core/thread/thread.cpp \
-    core/msgqueue.cpp \
-    core/thread/mutex.cpp \
-    core/thread/threadfactory.cpp \
-    core/msgqueuefactory.cpp \
-    core/thread/senderthread.cpp \
-    core/thread/receiverthread.cpp \
-    core/thread/sem.cpp
+    core/basethread.cpp \
+    core/smartmutex.cpp \
+    core/smartcountingsem.cpp \
+    core/mqthread.cpp \
+    core/senderthread.cpp \
+    core/receiverthread.cpp \
+    core/mqsubjectdetect.cpp \
+    core/baseos.cpp \
+    core/mqos.cpp
+

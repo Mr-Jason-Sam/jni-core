@@ -4,7 +4,7 @@
 #include "proxy/detectjni_global.h"
 #include "entity/detectconfig.h"
 #include "utils/qhelper.h"
-#include "detectresult.h"
+#include "entity/detectresult.h"
 
 #include <iostream>
 
