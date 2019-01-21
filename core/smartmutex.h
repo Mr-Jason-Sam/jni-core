@@ -17,7 +17,7 @@ private:
     string                name;
     pthread_t             mThread;
     pthread_mutex_t       mMutex;
-    pthread_mutexattr_t   mMuitexAttr;
+    pthread_mutexattr_t   mMutexAttr;
 };
 
 #endif // SMARTMUTEX_H

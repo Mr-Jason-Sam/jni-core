@@ -12,10 +12,11 @@ class BaseOS
 public:
     BaseOS(string name);
     virtual ~BaseOS();
-    virtual bool creatThread(BaseThread *thread);
+    virtual bool createThread(BaseThread *thread) = 0;
+    virtual void sleepSec(unsigned long sec) = 0;
 protected:
     string name;
-    BaseThread *thread;
+    BaseThread *mThread;
 };
 
 #endif // BASEOS_H

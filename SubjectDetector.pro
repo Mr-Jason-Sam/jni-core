@@ -59,12 +59,12 @@ HEADERS += \
     core/basethread.h \
     core/smartmutex.h \
     core/smartcountingsem.h \
-    core/mqthread.h \
     core/senderthread.h \
     core/receiverthread.h \
     core/mqsubjectdetect.h \
     core/baseos.h \
-    core/mqos.h
+    core/mqos.h \
+    core/mqosfactory.h
 
 SOURCES += \
     entity/detectconfig.cpp \
@@ -84,10 +84,10 @@ SOURCES += \
     core/basethread.cpp \
     core/smartmutex.cpp \
     core/smartcountingsem.cpp \
-    core/mqthread.cpp \
     core/senderthread.cpp \
     core/receiverthread.cpp \
     core/mqsubjectdetect.cpp \
     core/baseos.cpp \
-    core/mqos.cpp
+    core/mqos.cpp \
+    core/mqosfactory.cpp
 
